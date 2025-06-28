@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>French Language Summer Program for Kids</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Basic Reset & Typography */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            color: #3a5a40; /* Darker green */
+            margin-bottom: 15px;
+        }
+
+        h1 { font-size: 2.5em; }
+        h2 { font-size: 2em; }
+        h3 { font-size: 1.75em; }
+
+        /* Header */
+        header {
+            background-color: #f0f0f0; /* Light grey */
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #3a5a40; /* Darker green */
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #588157; /* Medium green */
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #a3b18a; /* Lighter green */
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+
+        .primary-btn {
+            background-color: #588157; /* Medium green */
+            color: white;
+            border: none;
+        }
+
+        .primary-btn:hover {
+            background-color: #3a5a40; /* Darker green */
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn {
+            background-color: #a3b18a; /* Lighter green */
+            color: #3a5a40; /* Darker green */
+            border: 2px solid #588157; /* Medium green */
+        }
+
+        .secondary-btn:hover {
+            background-color: #c9d2b2;
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://via.placeholder.com/1600x600/a3b18a/ffffff?text=Fun+French+Learning'); /* Placeholder image, replace with a real one */
+            background-size: cover;
+            background-position: center;
+            color: #3a5a40;
+            padding: 100px 20px;
+        }
+
+        .hero-section h2 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        .hero-section p {
+            font-size: 1.3em;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .info-section {
+            background-color: #e0eacb; /* Very light green */
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .detail-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .detail-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .detail-item .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .detail-item h4 {
+            color: #588157;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .detail-item p {
+            color: #666;
+        }
+
+        .content-section {
+            background-color: #f4f7f6;
+            padding-bottom: 40px;
+        }
+
+        .learning-list {
+            list-style: none;
+            max-width: 700px;
+            margin: 30px auto 0 auto;
+            text-align: left;
+            font-size: 1.1em;
+            color: #444;
+        }
+
+        .learning-list li {
+            background-color: #fff;
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            border-left: 5px solid #a3b18a;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .highlight-section {
+            background-color: #dce2c0; /* Slightly darker light green */
+            padding-top: 40px;
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .highlight-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .highlight-item .star-icon {
+            font-size: 2.2em;
+            color: #ffd700; /* Gold for stars */
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .highlight-item h4 {
+            color: #588157;
+            margin-bottom: 10px;
+        }
+
+        .limited-spots {
+            margin-top: 40px;
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #c02d2d; /* Red for urgency */
+        }
+
+        .call-to-action-section {
+            background-color: #588157; /* Medium green */
+            color: white;
+            padding: 80px 0;
+        }
+
+        .call-to-action-section h3 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .call-to-action-section p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Contact Form Specific Styles */
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 40px auto 0 auto;
+            text-align: left;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #3a5a40;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form input[type="tel"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form button[type="submit"] {
+            background-color: #a3b18a; /* Lighter green */
+            color: #3a5a40; /* Darker green */
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+        }
+
+        .contact-form button[type="submit"]:hover {
+            background-color: #c9d2b2;
+            transform: translateY(-2px);
+        }
+
+        .contact-info-below-form {
+            margin-top: 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .contact-info-below-form a {
+            color: white;
+            text-decoration: none;
+            transition: text-decoration 0.3s ease;
+        }
+
+        .contact-info-below-form a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3a5a40; /* Darker green */
+            color: #e0eacb;
+            padding: 30px 0;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        /* For JavaScript animations */
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 15px;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .hero-section h2 {
+                font-size: 2.5em;
+            }
+
+            .details-grid, .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h2 {
+                font-size: 2em;
+            }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            .detail-item, .highlight-item {
+                padding: 20px;
+            }
+
+            .learning-list li {
+                padding: 10px 15px;
+                font-size: 1em;
+            }
+
+            .contact-form {
+                padding: 20px;
+            }
+
+            .contact-form button[type="submit"] {
+                font-size: 1em;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">🇫🇷 French Fun & Learn!</h1>
+            <nav>
+                <ul>
+                    <li><a href="#program-details">Program Details</a></li>
+                    <li><a href="#what-they-learn">What They'll Learn</a></li>
+                    <li><a href="#enroll">Enroll Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <h2>✨ Fun & Interactive Online French Classes for Kids! ✨</h2>
+            <p>Give your child the gift of a new language this summer.</p>
+            <a href="#enroll" class="btn primary-btn">Enroll Your Child Today!</a>
+        </div>
+    </section>
+
+    <section id="program-details" class="info-section">
+        <div class="container">
+            <h3>Program Details</h3>
+            <div class="details-grid">
+                <div class="detail-item">
+                    <span class="icon">👧</span>
+                    <h4>Age Group</h4>
+                    <p>8 – 15 years</p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">📅</span>
+                    <h4>Starting Date</h4>
+                    <p>1st July</p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">🗓️</span>
+                    <h4>Schedule</h4>
+                    <p>2 days a week (Tues-Thurs)</p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">📘</span>
+                    <h4>Total Sessions</h4>
+                    <p>8 Sessions</p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">⏰</span>
+                    <h4>Class Timings</h4>
+                    <p>2:00 PM – 3:00 PM<br>OR<br>8:00 PM – 9:00 PM</p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">💻</span>
+                    <h4>Mode</h4>
+                    <p>Online (Zoom/Google Meet)</p>
+                </div>
+                <div class="detail-item">
+                    <span class="icon">💸</span>
+                    <h4>Fee</h4>
+                    <p>Rs. 6,000 only</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="what-they-learn" class="content-section">
+        <div class="container">
+            <h3>🎯 What will your child learn?</h3>
+            <p>This course will give children an initial level of understanding of the French language, including:</p>
+            <ul class="learning-list">
+                <li>✅ Numbers & Colours</li>
+                <li>✅ Family & Everyday Objects</li>
+                <li>✅ Days of the Week</li>
+                <li>✅ Introducing Yourself & Basic Conversations</li>
+                <li>✅ Fun Vocabulary through Games and Activities</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="why-choose-us" class="highlight-section">
+        <div class="container">
+            <h3>Why Choose Our Program?</h3>
+            <div class="highlights-grid">
+                <div class="highlight-item">
+                    <span class="star-icon">🌟</span>
+                    <h4>Perfect for Beginners</h4>
+                    <p>No prior French knowledge required!</p>
+                </div>
+                <div class="highlight-item">
+                    <span class="star-icon">💡</span>
+                    <h4>Engaging & Interactive</h4>
+                    <p>Learning through games, activities, and fun!</p>
+                </div>
+                <div class="highlight-item">
+                    <span class="star-icon">🚀</span>
+                    <h4>Builds Confidence</h4>
+                    <p>Encourages early language development in a supportive environment.</p>
+                </div>
+            </div>
+            <p class="limited-spots">Limited spots available – secure your child's place today!</p>
+        </div>
+    </section>
+
+    <section id="enroll" class="call-to-action-section">
+        <div class="container">
+            <h3>Ready to Enroll? Contact Us!</h3>
+            <p>Fill out the form below, and we'll get back to you shortly to discuss enrollment.</p>
+
+            <div class="contact-form">
+		<form method="POST" data-netlify="true">
+                    <label for="parent-name">Parent's Name:</label>
+                    <input type="text" id="parent-name" name="parentName" required>
+
+                    <label for="parent-email">Parent's Email:</label>
+                    <input type="email" id="parent-email" name="parentEmail" required>
+
+                    <label for="parent-phone">Parent's Phone (e.g., +92 335 0300341):</label>
+                    <input type="tel" id="parent-phone" name="parentPhone" pattern="[0-9+ ]{10,}" title="Please enter a valid phone number, including country code." required>
+
+                    <label for="child-age">Child's Age:</label>
+                    <input type="text" id="child-age" name="childAge" placeholder="e.g., 9 years old">
+
+                    <label for="message">Your Message / Questions:</label>
+                    <textarea id="message" name="message" placeholder="Tell us if you have any preferred time slot (2 PM or 8 PM), or any other questions!"></textarea>
+
+                    <button type="submit">Submit Inquiry</button>
+                </form>
+            </div>
+
+            <p class="contact-info-below-form">
+                Prefer to call or message directly? Reach us at:
+                <br><a href="tel:+923350300341">+92 (335) 0300341</a> (Also available on WhatsApp)
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 French Fun & Learn Program. All rights reserved.</p>
+            <p>Contact: +92 (335) 0300341</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const sections = document.querySelectorAll('section');
+
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                } else {
+                    // entry.target.classList.remove('fade-in'); // Optional: uncomment to re-trigger animation on scroll out
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            section.classList.add('hidden');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
